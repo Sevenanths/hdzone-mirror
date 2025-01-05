@@ -1,0 +1,1 @@
+aiopioneer==0.8.0
