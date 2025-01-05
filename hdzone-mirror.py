@@ -25,12 +25,12 @@ vsx = aiopioneer.PioneerAVR(args.ip)
 async def connect_to_receiver():
     while True:
         try:
-            print(f"Attempting to connect to receiver ..")
+            # print(f"Attempting to connect to receiver ..")
             await vsx.connect(reconnect=False)
             print("Connected to the receiver!")
             # Go down once connected
         except Exception as e:
-            print(f"Failed to connect: {e}. Retrying in 5 seconds...")
+            # print(f"Failed to connect: {e}. Retrying in 5 seconds...")
             await asyncio.sleep(5)
             continue # Restart loop from the beginning, which means we end up trying to connect again
     
@@ -87,7 +87,7 @@ async def connect_to_receiver():
                 await vsx.disconnect()
                 break
 
-            print("Sleep 5 seconds (internal)")
+            # print("Sleep 5 seconds (internal)")
             await asyncio.sleep(5)
 
         print("Sleep 5 seconds after fail")
